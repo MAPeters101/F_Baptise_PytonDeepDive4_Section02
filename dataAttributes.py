@@ -31,11 +31,29 @@ acc_3 = BankAccount()
 print(getattr(acc_3, 'apr'))
 
 
+acc_1.bank = 'Acme Savings & Loans'
+print(acc_1.__dict__)
+print(acc_2.__dict__)
+print(BankAccount.__dict__)
+print(type(BankAccount.__dict__))
+
+acc_1 = BankAccount()
+print(type(acc_1.__dict__))
 
 
+class Program:
+    language = 'Python'
 
+p = Program()
+print(p.__dict__)
+p.__dict__['version'] = '3.7'
+print(p.__dict__)
+print(p.version)
+print(getattr(p, 'version'))
 
-
-
-
+p = Program()
+#print(p.version)
+p.version = '3.7'
+print(p.version)
+print(p.__dict__)
 
